@@ -6,7 +6,49 @@ const isConnected = ref(true);
 
 <template>
   <div>
-    <!-- <div :class="isConnected ? 'active' : 'inactive' "> -->
+    
+    <div :style="{
+      padding: '0 8px',
+      borderRadius: '8px',
+      color: isConnected ? 'green' : 'red',
+      backgroundColor: isConnected ? 'rgb(214, 222, 214)' : 'rgb(222, 214, 222)', 
+    }">
+      Conexao Estabelecida
+    </div>
+  </div>
+
+</template>
+
+<style>
+.tag {
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+.active{
+  color: green;
+  background-color: rgb(214, 222, 214);
+}
+
+.inactive{
+  color: red;
+  background-color: rgb(222, 214, 222);
+}
+
+
+</style>
+
+<!-- V_BIND classes dinamicas -->
+<!--
+<script setup>
+import { ref } from 'vue';
+
+const isConnected = ref(true);
+</script>
+
+<template>
+  <div>
+    
     <div :class="{
       'tag': true,
       'active': isConnected,
@@ -36,7 +78,7 @@ const isConnected = ref(true);
 
 
 </style>
-
+-->
 <!-- V-BIND -->
 <!-- <script setup>
 import { ref } from 'vue';
