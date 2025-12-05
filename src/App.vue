@@ -1,4 +1,25 @@
-<script setup>
+<!-- V-BIND -->
+<!-- <script setup>
+import { ref } from 'vue';
+
+const image = ref('https://vuejs.org/images/logo.png');
+const link = ref('https://vuejs.org');
+</script>
+
+<template>
+  <div>
+    <a :href="link">
+      <img 
+        :src="image" 
+        alt=""
+        width="100"
+        >
+      </a>
+  </div>
+</template> -->
+
+<!-- V-FOR -->
+<!-- <script setup>
 import { ref } from 'vue';
 
 const fruits = ref(['Manga', 'banana', 'morango']);
@@ -39,7 +60,7 @@ const users = ref([
       </table>
     </div>
   </div>
-</template>
+</template> -->
 
 <!-- v-show
 <script setup>
