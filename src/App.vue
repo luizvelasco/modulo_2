@@ -1,3 +1,42 @@
+<script setup>
+import { ref } from 'vue';
+
+const isConnected = ref(true);
+</script>
+
+<template>
+  <div>
+    <!-- <div :class="isConnected ? 'active' : 'inactive' "> -->
+    <div :class="{
+      'tag': true,
+      'active': isConnected,
+      'inactive': !isConnected
+    }">
+      Conexao Estabelecida
+    </div>
+  </div>
+
+</template>
+
+<style>
+.tag {
+  padding: 0 8px;
+  border-radius: 8px;
+}
+
+.active{
+  color: green;
+  background-color: rgb(214, 222, 214);
+}
+
+.inactive{
+  color: red;
+  background-color: rgb(222, 214, 222);
+}
+
+
+</style>
+
 <!-- V-BIND -->
 <!-- <script setup>
 import { ref } from 'vue';
