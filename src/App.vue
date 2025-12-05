@@ -1,5 +1,48 @@
 <script setup>
 import { ref } from 'vue';
+const form = ref({
+  name: '',
+  message: ''
+})
+</script>
+
+<template>
+  <div class="box">
+    <div>
+      <div>
+        <label>Nome</label>
+        <input v-model="form.name" type="text">
+      </div>
+
+      <br>
+
+      <div>
+        <label>Mensagem</label>
+        <textarea v-model="form.message"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p>
+      Nome: {{ form.name }} <br/>
+      Mensagem: {{ form.message }}<br/>
+    </p>
+  </div>
+
+</template>
+
+<style>
+.box {
+  width: 1280px;
+  display: flex;
+  gap: 20px;
+}
+</style>
+
+<!-- V-BIND com style dinamicos -->
+<!-- <script setup>
+import { ref } from 'vue';
 
 const isConnected = ref(true);
 </script>
@@ -36,7 +79,7 @@ const isConnected = ref(true);
 }
 
 
-</style>
+</style> -->
 
 <!-- V_BIND classes dinamicas -->
 <!--
