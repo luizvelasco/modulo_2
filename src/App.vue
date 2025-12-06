@@ -3,12 +3,14 @@ import { ref } from 'vue';
 
 const countries = ['Brasil', 'Australia', 'Japão'];
 const sports = ['Futebol', 'Volei', 'Basquete'];
+const genders = ['Masculino', 'Feminino'];
 const form = ref({
   name: '',
   message: '',
   country: '',
   terms: true,
-  sports: []
+  sports: [],
+  gender: '',
 });
 </script>
 
@@ -42,6 +44,13 @@ const form = ref({
       </div>
 
       <div class="form-group">
+        <label for="">Sexo</label>
+        <div v-for="gender in genders" :key="gender">
+          <input v-model="form.gender" type="radio" :value="gender">{{ gender }}
+        </div>
+      </div>
+
+      <div class="form-group">
         <label>
           <input type="checkbox" v-model="form.terms">
           Aceito os termos
@@ -58,6 +67,7 @@ const form = ref({
       <p><strong>Mensagem:</strong> {{ form.message }}</p>
       <p><strong>País:</strong> {{ form.country }}</p>
       <p><strong>Esportes:</strong> {{ form.sports }}</p>
+      <p><strong>Sexo:</strong> {{ form.gender }}</p>
       <p><strong>Termos:</strong> {{ form.terms }}</p>
       
     </div>
