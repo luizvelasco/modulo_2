@@ -2,10 +2,13 @@
 import { ref } from 'vue';
 
 const countries = ['Brasil', 'Australia', 'Japão'];
+const sports = ['Futebol', 'Volei', 'Basquete'];
 const form = ref({
   name: '',
   message: '',
-  country: ''
+  country: '',
+  terms: true,
+  sports: []
 });
 </script>
 
@@ -30,6 +33,23 @@ const form = ref({
           <option v-for="country in countries" :key="country">{{ country }}</option>
         </select>
       </div>
+
+      <div class="form-group">
+        <label for="">Esportes</label>
+        <div v-for="sport in sports" :key="sport">
+          <input v-model="form.sports" type="checkbox" :value="sport">{{ sport }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" v-model="form.terms">
+          Aceito os termos
+        </label>
+        
+        
+      </div>
+
     </div>
 
     <div class="preview">
@@ -37,6 +57,9 @@ const form = ref({
       <p><strong>Nome:</strong> {{ form.name }}</p>
       <p><strong>Mensagem:</strong> {{ form.message }}</p>
       <p><strong>País:</strong> {{ form.country }}</p>
+      <p><strong>Esportes:</strong> {{ form.sports }}</p>
+      <p><strong>Termos:</strong> {{ form.terms }}</p>
+      
     </div>
 
   </div>
