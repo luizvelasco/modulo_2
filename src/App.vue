@@ -1,18 +1,25 @@
 <script setup>
   import { computed, ref } from 'vue';
 
-  const products = ref ([
-    {name: 'Iphone', price: 100},
-    {name: 'Macbook', price: 500},
+  const users = ref ([
+    {name: 'Rebeca', age: 15},
+    {name: 'Jon', age: 20},
+    {name: 'Maria', age: 50},
   ])
 
-  const total = computed(() => {
-    return products.value.reduce((sum, product) => sum + product.price, 0);
+  const adults = computed(() => {
+    return users.value.filter(user => user.age >= 18);
   })
+
 </script>
 
 <template>
   <div>
-    {{ total }}
+    <ul>
+      <li v-for="user in adults" :key="user.name">
+        {{ user.name }}
+      </li>
+    </ul>
+   
   </div>
 </template>
