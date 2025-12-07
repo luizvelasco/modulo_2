@@ -1,25 +1,16 @@
 <script setup>
-  import { computed, ref } from 'vue';
-
-  const users = ref ([
-    {name: 'Rebeca', age: 15},
-    {name: 'Jon', age: 20},
-    {name: 'Maria', age: 50},
-  ])
-
-  const adults = computed(() => {
-    return users.value.filter(user => user.age >= 18);
-  })
+  import { watch, ref } from 'vue';
+  const name = ref('');
+  
+  watch(name, (newValue, oldValue) => {
+    console.log(newValue)
+    
+  });
 
 </script>
 
 <template>
   <div>
-    <ul>
-      <li v-for="user in adults" :key="user.name">
-        {{ user.name }}
-      </li>
-    </ul>
-   
+   <input type="text" v-model="name">
   </div>
 </template>
