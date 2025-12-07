@@ -6,8 +6,10 @@ import AppButton from './components/AppButton.vue';
 
 <template>
   <div>
-    <AppButton />
-   <AppButton /><AppButton />
+   <AppButton>Salvar</AppButton><br>
+   <AppButton/><br>
+   <AppButton>Deletar</AppButton><br>
+   <AppButton>Editar</AppButton><br>
    
   </div>
 </template>

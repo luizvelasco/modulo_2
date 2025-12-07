@@ -8,7 +8,10 @@ import { ref } from 'vue';
 </script>
 
 <template>
-    <button @click="onClick">Click me! ({{ clicks }})</button>
+    <button @click="onClick">
+        <slot>Click Me</slot>
+        ({{ clicks }})
+    </button>
 
 </template>
 
