@@ -1,17 +1,20 @@
 <script setup>
 import { ref } from 'vue';
-import AppButton from './components/AppButton.vue';
-const totalClicks = ref(0);
-const changeCount = () => {
-  totalClicks.value++;
-};
+import AppInput from './components/AppInput.vue';
+const name = ref('');
+const sobrenome = ref('');
 
 </script>
 
 <template>
   <div>
-    Total de cliques: {{ totalClicks }} <br><br>
-   <AppButton variant="active" @contador-mudou="changeCount">Salvar</AppButton><br>
-   <AppButton variant="inactive" @contador-mudou="changeCount">Deletar</AppButton><br>
+    {{ name }} <br>
+    <AppInput v-model="name"/>
   </div>
+
+  <div>
+    {{ sobrenome }} <br>
+    <AppInput v-model="sobrenome"/>
+  </div>
+
 </template>
