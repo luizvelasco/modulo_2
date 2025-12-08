@@ -1,5 +1,20 @@
+<template>
+    <button @click="onClick"
+        :class="{'active': props.variant === 'active', 
+        'inactive': props.variant === 'inactive'
+
+        }"
+    >
+        <slot>Click Me</slot>
+        ({{ clicks }})
+    </button>
+
+</template>
+
 <script setup>
 import { ref } from 'vue';
+
+    const props = defineProps(['variant']);
 
     const clicks = ref(0);
     const onClick = () => {
@@ -7,11 +22,13 @@ import { ref } from 'vue';
     };
 </script>
 
-<template>
-    <button @click="onClick">
-        <slot>Click Me</slot>
-        ({{ clicks }})
-    </button>
-
-</template>
-
+<style>
+    .active {
+        background-color: green;
+        color: white;
+    }
+    .inactive {
+        background-color: red;
+        color: white;
+    }   
+</style>
